@@ -3,9 +3,11 @@ layout: default
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
-::: tip
-tipps
-:::
+> **Note**
+> This is a note
+
+> **Warning**
+> This is a warning
 [Link to another page](./another-page.html).
 
 There should be whitespace between paragraphs.
