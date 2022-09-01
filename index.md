@@ -3,7 +3,9 @@ layout: default
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
-
+::: tip
+tipps
+:::
 [Link to another page](./another-page.html).
 
 There should be whitespace between paragraphs.
