@@ -1,18 +1,33 @@
+name: CI
+
 on:
   push:
+    branches: 
+      - main  # Specify the branches you want to trigger the build on
   pull_request:
     types: [opened, synchronize]
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: script/cibuild
+    name: Build and Test
+
     steps:
       - uses: actions/checkout@v2
+      
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
           bundler-cache: true
-      - name: build
-        run: script/bootstrap
-      - name: test
+      
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build the site
+        run: bundle exec jekyll build
+
+      - name: Run tests
         run: script/cibuild
+
+    env:
+      JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use the default GitHub token
