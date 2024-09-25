@@ -1,6 +1,6 @@
 ---
 layout: null
-redirect_to: https://riasuh.github.io/docs2/
+redirect_to: https://riasuh.github.io/main/
 ---
 <html>
 <head>
